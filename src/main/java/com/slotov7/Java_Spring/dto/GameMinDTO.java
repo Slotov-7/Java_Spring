@@ -1,6 +1,7 @@
 package com.slotov7.Java_Spring.dto;
 
 import com.slotov7.Java_Spring.entities.Game;
+import com.slotov7.Java_Spring.projections.GameMinProjection;
 
 
 public class GameMinDTO {
@@ -19,6 +20,13 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
